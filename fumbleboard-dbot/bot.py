@@ -9,7 +9,7 @@ import logging
 import sys
 import argparse
 import youtube_dl
-import sleep
+import time
 
 #################################
 # parse logging level from cli
@@ -148,7 +148,7 @@ async def playlocal(ctx):
         vc.play(discord.FFmpegPCMAudio(source="/home/kidpixo/music/beets/Cowboy Bebop/Cowboy Bebop/00 Bad dog no biscuits.mp3"))
         # Sleep while audio is playing.
         while vc.is_playing():
-            sleep(.1)
+            time.sleep(.1)
         await vc.disconnect()
     else:
         await ctx.send(str(ctx.author.name) + "is not in a channel.")
