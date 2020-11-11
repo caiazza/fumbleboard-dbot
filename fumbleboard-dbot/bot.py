@@ -8,6 +8,7 @@ from datetime import datetime
 import logging
 import sys
 import argparse
+import youtube_dl
 
 #################################
 # parse logging level from cli
@@ -42,6 +43,52 @@ with open("playlist.json") as playlist_file:
     data = playlist_file.read()
     playlist = json.loads(data)['songs']
 logging.info('Loaded playlist with {} songs'.format(len(playlist)))
+
+# [python - Discord.py rewrite and youtube_dl - Stack Overflow](https://stackoverflow.com/questions/60241517/discord-py-rewrite-and-youtube-dl)
+# Suppress noise about console usage from errors
+youtube_dl.utils.bug_reports_message = lambda: ''
+
+ytdl_format_options = {
+    'format': 'bestaudio/best',
+    'outtmpl': '%(extractor)s-%(id)s-%(title)s.%(ext)s',
+    'restrictfilenames': True,
+    'noplaylist': False,
+    'nocheckcertificate': True,
+    'ignoreerrors': False,
+    'logtostderr': False,
+    'quiet': True,
+    'no_warnings': True,
+    'default_search': 'auto',
+    'source_address': '0.0.0.0' # bind to ipv4 since ipv6 addresses cause issues sometimes
+}
+
+ffmpeg_options = {
+    'options': '-vn'
+}
+
+ytdl = youtube_dl.YoutubeDL(ytdl_format_options)
+
+class YTDLSource(discord.PCMVolumeTransformer):
+    def __init__(self, source, *, data, volume=0.5):
+        super().__init__(source, volume)
+
+        self.data = data
+
+        self.title = data.get('title')
+        self.url = data.get('url')
+
+    @classmethod
+    async def from_url(cls, url, *, loop=None, stream=False):
+        loop = loop or asyncio.get_event_loop()
+        data = await loop.run_in_executor(None, lambda: ytdl.extract_info(url, download=not stream))
+
+        if 'entries' in data:
+            # take first item from a playlist
+            data = data['entries'][0]
+
+        filename = data['url'] if stream else ytdl.prepare_filename(data)
+        return cls(discord.FFmpegPCMAudio(filename, **ffmpeg_options), data=data)
+
 #################################
 # bot functions 
 
@@ -68,5 +115,25 @@ async def timer(ctx):
     response = f'Hi {ctx.message.author.mention} it is {datetime.now()}'
     logging.info('timer function , response {}'.format(response))
     await ctx.send(response)
+
+@bot.command()
+async def join(ctx):
+    # channel = bot.get_channel('615140999374831641')
+    channel = ctx.author.voice.channel
+    logging.info('joining voice channel {}'.format(channel))
+    await channel.connect()
+@bot.command()
+async def leave(ctx):
+    # channel = bot.get_channel('615140999374831641')
+    # channel = ctx.author.voice.channel
+    logging.info('leaveing voice channel {}')
+    await ctx.voice_client.disconnect()
+
+@bot.command()
+async def stream(ctx, *, url):
+    """Streams from a url (same as yt, but doesn't predownload)"""
+    player = await YTDLSource.from_url(url, loop=bot.loop, stream=True)
+    ctx.voice_client.play(player, after=lambda e: print('Player error: %s' % e) if e else None)
+    await ctx.send('Now playing: {}'.format(player.title))
 
 bot.run(bot_token)
