@@ -1,14 +1,14 @@
 {
   "songs": [
-    {"title" : "song 1"  , "author": "author 1"  , "short": "short1"  , "tag": ["tag1 , tag3"]" , path" : "path_to_song_1" }   ,
-    {"title" : "song 2"  , "author": "author 2"  , "short": "short2"  , "tag": ["tag3 , tag2"]" , "path" : "path_to_song_2" }  ,
-    {"title" : "song 3"  , "author": "author 3"  , "short": "short3"  , "tag": ["tag1 , tag5"]" , "path" : "path_to_song_3" }  ,
-    {"title" : "song 4"  , "author": "author 4"  , "short": "short4"  , "tag": ["tag1 , tag8"]" , "path" : "path_to_song_4" }  ,
-    {"title" : "song 5"  , "author": "author 5"  , "short": "short5"  , "tag": ["tag5       "]" , "path" : "path_to_song_5" }  ,
-    {"title" : "song 6"  , "author": "author 6"  , "short": "short6"  , "tag": ["tag4 , tag2"]" , "path" : "path_to_song_6" }  ,
-    {"title" : "song 7"  , "author": "author 7"  , "short": "short7"  , "tag": ["tag7 , tag1"]" , "path" : "path_to_song_7" }  ,
-    {"title" : "song 8"  , "author": "author 8"  , "short": "short8"  , "tag": ["tag3 , tag6"]" , "path" : "path_to_song_8" }  ,
-    {"title" : "song 9"  , "author": "author 9"  , "short": "short9"  , "tag": ["tag1 , tag4"]" , "path" : "path_to_song_9" }  ,
-    {"title" : "song 10" , "author": "author 10" , "short": "short10" , "tag": ["tag1 , tag2"]" , "path" : "path_to_song_10" }
+    {"title" : "song 1"  , "author": "author 1"  , "short": "short1"  , "tag": ["tag1" , "tag3"] , "path" : "path_to_song_1" }   ,
+    {"title" : "song 2"  , "author": "author 2"  , "short": "short2"  , "tag": ["tag3" , "tag2"] , "path" : "path_to_song_2" }  ,
+    {"title" : "song 3"  , "author": "author 3"  , "short": "short3"  , "tag": ["tag1" , "tag5"] , "path" : "path_to_song_3" }  ,
+    {"title" : "song 4"  , "author": "author 4"  , "short": "short4"  , "tag": ["tag1" , "tag8"] , "path" : "path_to_song_4" }  ,
+    {"title" : "song 5"  , "author": "author 5"  , "short": "short5"  , "tag": ["tag5"         ] , "path" : "path_to_song_5" }  ,
+    {"title" : "song 6"  , "author": "author 6"  , "short": "short6"  , "tag": ["tag4" , "tag2"] , "path" : "path_to_song_6" }  ,
+    {"title" : "song 7"  , "author": "author 7"  , "short": "short7"  , "tag": ["tag7" , "tag1"] , "path" : "path_to_song_7" }  ,
+    {"title" : "song 8"  , "author": "author 8"  , "short": "short8"  , "tag": ["tag3" , "tag6"] , "path" : "path_to_song_8" }  ,
+    {"title" : "song 9"  , "author": "author 9"  , "short": "short9"  , "tag": ["tag1" , "tag4"] , "path" : "path_to_song_9" }  ,
+    {"title" : "song 10" , "author": "author 10" , "short": "short10" , "tag": ["tag1" , "tag2"] , "path" : "path_to_song_10" }
       ]
 }
