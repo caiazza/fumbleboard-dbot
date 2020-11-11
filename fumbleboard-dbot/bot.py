@@ -9,6 +9,7 @@ import logging
 import sys
 import argparse
 import youtube_dl
+import sleep
 
 #################################
 # parse logging level from cli
@@ -130,10 +131,28 @@ async def leave(ctx):
     await ctx.voice_client.disconnect()
 
 @bot.command()
-async def stream(ctx, *, url):
+async def streamyt(ctx, *, urlm ,help='stream an youtube channel, "streamyt URL"'):
     """Streams from a url (same as yt, but doesn't predownload)"""
     player = await YTDLSource.from_url(url, loop=bot.loop, stream=True)
     ctx.voice_client.play(player, after=lambda e: print('Player error: %s' % e) if e else None)
     await ctx.send('Now playing: {}'.format(player.title))
+
+@bot.command(name="playlocal")
+async def playlocal(ctx):
+    # Gets voice channel of message author
+    voice_channel = ctx.author.voice.channel
+    channel = None
+    if voice_channel != None:
+        channel = voice_channel.name
+        vc = await voice_channel.connect()
+        vc.play(discord.FFmpegPCMAudio(source="/home/kidpixo/music/beets/Cowboy Bebop/Cowboy Bebop/00 Bad dog no biscuits.mp3"))
+        # Sleep while audio is playing.
+        while vc.is_playing():
+            sleep(.1)
+        await vc.disconnect()
+    else:
+        await ctx.send(str(ctx.author.name) + "is not in a channel.")
+    # Delete command after the audio is done playing.
+    await ctx.message.delete()
 
 bot.run(bot_token)
