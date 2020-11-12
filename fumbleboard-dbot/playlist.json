@@ -1,14 +1,553 @@
+[{
+    "SourceFile": "music/80s_- Berlin 1981_tags.mp3",
+    "Title": "Berlin 1981",
+    "Artist": "Fumble",
+    "Tags" : [ "80s"]
+},
 {
-  "songs": [
-    {"title" : "song 1"  , "author": "author 1"  , "short": "short1"  , "tag": ["tag1" , "tag3"] , "path" : "path_to_song_1" }   ,
-    {"title" : "song 2"  , "author": "author 2"  , "short": "short2"  , "tag": ["tag3" , "tag2"] , "path" : "path_to_song_2" }  ,
-    {"title" : "song 3"  , "author": "author 3"  , "short": "short3"  , "tag": ["tag1" , "tag5"] , "path" : "path_to_song_3" }  ,
-    {"title" : "song 4"  , "author": "author 4"  , "short": "short4"  , "tag": ["tag1" , "tag8"] , "path" : "path_to_song_4" }  ,
-    {"title" : "song 5"  , "author": "author 5"  , "short": "short5"  , "tag": ["tag5"         ] , "path" : "path_to_song_5" }  ,
-    {"title" : "song 6"  , "author": "author 6"  , "short": "short6"  , "tag": ["tag4" , "tag2"] , "path" : "path_to_song_6" }  ,
-    {"title" : "song 7"  , "author": "author 7"  , "short": "short7"  , "tag": ["tag7" , "tag1"] , "path" : "path_to_song_7" }  ,
-    {"title" : "song 8"  , "author": "author 8"  , "short": "short8"  , "tag": ["tag3" , "tag6"] , "path" : "path_to_song_8" }  ,
-    {"title" : "song 9"  , "author": "author 9"  , "short": "short9"  , "tag": ["tag1" , "tag4"] , "path" : "path_to_song_9" }  ,
-    {"title" : "song 10" , "author": "author 10" , "short": "short10" , "tag": ["tag1" , "tag2"] , "path" : "path_to_song_10" }
-      ]
+    "SourceFile": "music/80s_- Berlin 1981tags.mp3",
+    "Title": "Berlin 1981",
+    "Artist": "Fumble",
+    "Tags" : [ "80s"]
+},
+{
+    "SourceFile": "music/80s_- Chasing in Berlin_tags.mp3",
+    "Title": "Chasing in Berlin",
+    "Artist": "Fumble",
+    "Tags" : [ "80s"]
+},
+{
+    "SourceFile": "music/80s_- The Loonies_tags.mp3",
+    "Title": "The Loonies",
+    "Artist": "Fumble",
+    "Tags" : [ "80s"]
+},
+{
+    "SourceFile": "music/80s_- The Loop_tags.mp3",
+    "Title": "The Loop",
+    "Artist": "Fumble",
+    "Tags" : [ "80s"]
+},
+{
+    "SourceFile": "music/Anime_- Gurren Gattai_tags.mp3",
+    "Title": "Gurren Gattai",
+    "Artist": "Fumble",
+    "Tags" : [ "Anime"]
+},
+{
+    "SourceFile": "music/Anime_- Retro Gattai_tags.mp3",
+    "Title": "Retro Gattai",
+    "Artist": "Fumble",
+    "Tags" : [ "Anime"]
+},
+{
+    "SourceFile": "music/Anime_- Supa Robotto_tags.mp3",
+    "Title": "Supa Robotto",
+    "Artist": "Fumble",
+    "Tags" : [ "Anime"]
+},
+{
+    "SourceFile": "music/Asian_- Feng Shui_tags.mp3",
+    "Title": "Feng Shui",
+    "Artist": "Fumble",
+    "Tags" : [ "Asian"]
+},
+{
+    "SourceFile": "music/Asian_- Five Rings_tags.mp3",
+    "Title": "Five Rings",
+    "Artist": "Fumble",
+    "Tags" : [ "Asian"]
+},
+{
+    "SourceFile": "music/Asian_- Samurai Showdown_tags.mp3",
+    "Title": "Samurai Showdown",
+    "Artist": "Fumble",
+    "Tags" : [ "Asian"]
+},
+{
+    "SourceFile": "music/Asian_- Trek in the woods_tags.mp3",
+    "Title": "Trek in the woods",
+    "Artist": "Fumble",
+    "Tags" : [ "Asian"]
+},
+{
+    "SourceFile": "music/Blades_- Doskvol_tags.mp3",
+    "Title": "Doskvol",
+    "Artist": "Fumble",
+    "Tags" : [ "Blades"]
+},
+{
+    "SourceFile": "music/Blades_- In the dark_tags.mp3",
+    "Title": "In the dark",
+    "Artist": "Fumble",
+    "Tags" : [ "Blades"]
+},
+{
+    "SourceFile": "music/Bloodborne_- Hunter dreams_tags.mp3",
+    "Title": "Hunter dreams",
+    "Artist": "Fumble",
+    "Tags" : [ "Bloodborne"]
+},
+{
+    "SourceFile": "music/Bloodborne_- Palemoon_tags.mp3",
+    "Title": "Palemoon",
+    "Artist": "Fumble",
+    "Tags" : [ "Bloodborne"]
+},
+{
+    "SourceFile": "music/Bloodborne_- The beast_tags.mp3",
+    "Title": "The beast",
+    "Artist": "Fumble",
+    "Tags" : [ "Bloodborne"]
+},
+{
+    "SourceFile": "music/Bloodborne_- Yarnham_tags.mp3",
+    "Title": "Yarnham",
+    "Artist": "Fumble",
+    "Tags" : [ "Bloodborne"]
+},
+{
+    "SourceFile": "music/Chistmas_tags.mp3",
+    "Title": "Chistmas",
+    "Artist": "Fumble",
+    "Tags" : [ "None"]
+},
+{
+    "SourceFile": "music/Combat_- Generic_tags.mp3",
+    "Title": "Generic",
+    "Artist": "Fumble",
+    "Tags" : [ "Combat"]
+},
+{
+    "SourceFile": "music/Combat_- This means war_tags.mp3",
+    "Title": "This means war",
+    "Artist": "Fumble",
+    "Tags" : [ "Combat"]
+},
+{
+    "SourceFile": "music/Cyberpunk_- Flatliner_tags.mp3",
+    "Title": "Flatliner",
+    "Artist": "Fumble",
+    "Tags" : [ "Cyberpunk"]
+},
+{
+    "SourceFile": "music/Cyberpunk_- Meat Industry_tags.mp3",
+    "Title": "Meat Industry",
+    "Artist": "Fumble",
+    "Tags" : [ "Cyberpunk"]
+},
+{
+    "SourceFile": "music/Cyberpunk_- Mirrorshades_tags.mp3",
+    "Title": "Mirrorshades",
+    "Artist": "Fumble",
+    "Tags" : [ "Cyberpunk"]
+},
+{
+    "SourceFile": "music/Cyberpunk_- Speeding darkness_tags.mp3",
+    "Title": "Speeding darkness",
+    "Artist": "Fumble",
+    "Tags" : [ "Cyberpunk"]
+},
+{
+    "SourceFile": "music/Fantasy_- Age of Rebellion_tags.mp3",
+    "Title": "Age of Rebellion",
+    "Artist": "Fumble",
+    "Tags" : [ "Fantasy"]
+},
+{
+    "SourceFile": "music/Fantasy_- Aria Heroica_tags.mp3",
+    "Title": "Aria Heroica",
+    "Artist": "Fumble",
+    "Tags" : [ "Fantasy"]
+},
+{
+    "SourceFile": "music/Fantasy_- Classy Tavern_tags.mp3",
+    "Title": "Classy Tavern",
+    "Artist": "Fumble",
+    "Tags" : [ "Fantasy"]
+},
+{
+    "SourceFile": "music/Fantasy_- Crystal cave_tags.mp3",
+    "Title": "Crystal cave",
+    "Artist": "Fumble",
+    "Tags" : [ "Fantasy"]
+},
+{
+    "SourceFile": "music/Fantasy_- Dungeon_tags.mp3",
+    "Title": "Dungeon",
+    "Artist": "Fumble",
+    "Tags" : [ "Fantasy"]
+},
+{
+    "SourceFile": "music/Fantasy_- Epoca_tags.mp3",
+    "Title": "Epoca",
+    "Artist": "Fumble",
+    "Tags" : [ "Fantasy"]
+},
+{
+    "SourceFile": "music/Fantasy_- Epoca World_tags.mp3",
+    "Title": "Epoca World",
+    "Artist": "Fumble",
+    "Tags" : [ "Fantasy"]
+},
+{
+    "SourceFile": "music/Fantasy_- Exalted_tags.mp3",
+    "Title": "Exalted",
+    "Artist": "Fumble",
+    "Tags" : [ "Fantasy"]
+},
+{
+    "SourceFile": "music/Fantasy_- Fumble Fantasy titles_tags.mp3",
+    "Title": "Fumble Fantasy titles",
+    "Artist": "Fumble",
+    "Tags" : [ "Fantasy"]
+},
+{
+    "SourceFile": "music/Fantasy_- Holy Magic_tags.mp3",
+    "Title": "Holy Magic",
+    "Artist": "Fumble",
+    "Tags" : [ "Fantasy"]
+},
+{
+    "SourceFile": "music/Fantasy_- Lirveil_tags.mp3",
+    "Title": "Lirveil",
+    "Artist": "Fumble",
+    "Tags" : [ "Fantasy"]
+},
+{
+    "SourceFile": "music/Fantasy_- One Ring_tags.mp3",
+    "Title": "One Ring",
+    "Artist": "Fumble",
+    "Tags" : [ "Fantasy"]
+},
+{
+    "SourceFile": "music/Fantasy_- Orcs_tags.mp3",
+    "Title": "Orcs",
+    "Artist": "Fumble",
+    "Tags" : [ "Fantasy"]
+},
+{
+    "SourceFile": "music/Fantasy_- Pirates of Ledem_tags.mp3",
+    "Title": "Pirates of Ledem",
+    "Artist": "Fumble",
+    "Tags" : [ "Fantasy"]
+},
+{
+    "SourceFile": "music/Fantasy_- Popular demand_tags.mp3",
+    "Title": "Popular demand",
+    "Artist": "Fumble",
+    "Tags" : [ "Fantasy"]
+},
+{
+    "SourceFile": "music/Fantasy_- Quiet village_tags.mp3",
+    "Title": "Quiet village",
+    "Artist": "Fumble",
+    "Tags" : [ "Fantasy"]
+},
+{
+    "SourceFile": "music/Fantasy_- Ragnarok_tags.mp3",
+    "Title": "Ragnarok",
+    "Artist": "Fumble",
+    "Tags" : [ "Fantasy"]
+},
+{
+    "SourceFile": "music/Fantasy_- Sad Reprise_tags.mp3",
+    "Title": "Sad Reprise",
+    "Artist": "Fumble",
+    "Tags" : [ "Fantasy"]
+},
+{
+    "SourceFile": "music/Fantasy_- The Shire_tags.mp3",
+    "Title": "The Shire",
+    "Artist": "Fumble",
+    "Tags" : [ "Fantasy"]
+},
+{
+    "SourceFile": "music/Horror_- Death is not the end_tags.mp3",
+    "Title": "Death is not the end",
+    "Artist": "Fumble",
+    "Tags" : [ "Horror"]
+},
+{
+    "SourceFile": "music/Horror_- Flanagan_tags.mp3",
+    "Title": "Flanagan",
+    "Artist": "Fumble",
+    "Tags" : [ "Horror"]
+},
+{
+    "SourceFile": "music/Horror_- Mondo di tenebra_tags.mp3",
+    "Title": "Mondo di tenebra",
+    "Artist": "Fumble",
+    "Tags" : [ "Horror"]
+},
+{
+    "SourceFile": "music/Horror_- Strange Wyoming_tags.mp3",
+    "Title": "Strange Wyoming",
+    "Artist": "Fumble",
+    "Tags" : [ "Horror"]
+},
+{
+    "SourceFile": "music/Middle-east_- 1001 nights_tags.mp3",
+    "Title": "1001 nights",
+    "Artist": "Fumble",
+    "Tags" : [ "Middle-east"]
+},
+{
+    "SourceFile": "music/Middle-east_- Arabian Darkness_tags.mp3",
+    "Title": "Arabian Darkness",
+    "Artist": "Fumble",
+    "Tags" : [ "Middle-east"]
+},
+{
+    "SourceFile": "music/Middle-east_- Sukh_tags.mp3",
+    "Title": "Sukh",
+    "Artist": "Fumble",
+    "Tags" : [ "Middle-east"]
+},
+{
+    "SourceFile": "music/Modern_- Dia de los muertos_tags.mp3",
+    "Title": "Dia de los muertos",
+    "Artist": "Fumble",
+    "Tags" : [ "Modern"]
+},
+{
+    "SourceFile": "music/Modern_- Time slowing down_tags.mp3",
+    "Title": "Time slowing down",
+    "Artist": "Fumble",
+    "Tags" : [ "Modern"]
+},
+{
+    "SourceFile": "music/Noir_- Black Dhalia_tags.mp3",
+    "Title": "Black Dhalia",
+    "Artist": "Fumble",
+    "Tags" : [ "Noir"]
+},
+{
+    "SourceFile": "music/Noir_- Ipanema_tags.mp3",
+    "Title": "Ipanema",
+    "Artist": "Fumble",
+    "Tags" : [ "Noir"]
+},
+{
+    "SourceFile": "music/Noir_- LA Noir_tags.mp3",
+    "Title": "LA Noir",
+    "Artist": "Fumble",
+    "Tags" : [ "Noir"]
+},
+{
+    "SourceFile": "music/Noir_- Night agent_tags.mp3",
+    "Title": "Night agent",
+    "Artist": "Fumble",
+    "Tags" : [ "Noir"]
+},
+{
+    "SourceFile": "music/Noir_- Rainy day_tags.mp3",
+    "Title": "Rainy day",
+    "Artist": "Fumble",
+    "Tags" : [ "Noir"]
+},
+{
+    "SourceFile": "music/Outpost 42_- Reprise_tags.mp3",
+    "Title": "Reprise",
+    "Artist": "Fumble",
+    "Tags" : [ "Outpost 42"]
+},
+{
+    "SourceFile": "music/Outpost 42_tags.mp3",
+    "Title": "Outpost 42",
+    "Artist": "Fumble",
+    "Tags" : [ "None"]
+},
+{
+    "SourceFile": "music/Sci-fi_- Deep space_tags.mp3",
+    "Title": "Deep space",
+    "Artist": "Fumble",
+    "Tags" : [ "Sci-fi"]
+},
+{
+    "SourceFile": "music/Sci-fi_- Degenesis_tags.mp3",
+    "Title": "Degenesis",
+    "Artist": "Fumble",
+    "Tags" : [ "Sci-fi"]
+},
+{
+    "SourceFile": "music/Sci-fi_- Heart of the machine_tags.mp3",
+    "Title": "Heart of the machine",
+    "Artist": "Fumble",
+    "Tags" : [ "Sci-fi"]
+},
+{
+    "SourceFile": "music/Sci-fi_- Mutant_tags.mp3",
+    "Title": "Mutant",
+    "Artist": "Fumble",
+    "Tags" : [ "Sci-fi"]
+},
+{
+    "SourceFile": "music/Sci-fi_- Primal Punk_tags.mp3",
+    "Title": "Primal Punk",
+    "Artist": "Fumble",
+    "Tags" : [ "Sci-fi"]
+},
+{
+    "SourceFile": "music/Sci-Fi_- Red Alert_tags.mp3",
+    "Title": "Red Alert",
+    "Artist": "Fumble",
+    "Tags" : [ "Sci-Fi"]
+},
+{
+    "SourceFile": "music/Sci-fi_- Suoneria Telefono_tags.mp3",
+    "Title": "Suoneria Telefono",
+    "Artist": "Fumble",
+    "Tags" : [ "Sci-fi"]
+},
+{
+    "SourceFile": "music/Sci-fi_- The Beyond_tags.mp3",
+    "Title": "The Beyond",
+    "Artist": "Fumble",
+    "Tags" : [ "Sci-fi"]
+},
+{
+    "SourceFile": "music/Sci-fi_- The Sprawl_tags.mp3",
+    "Title": "The Sprawl",
+    "Artist": "Fumble",
+    "Tags" : [ "Sci-fi"]
+},
+{
+    "SourceFile": "music/Sci-fi_- USS Terror_tags.mp3",
+    "Title": "USS Terror",
+    "Artist": "Fumble",
+    "Tags" : [ "Sci-fi"]
+},
+{
+    "SourceFile": "music/Sci-fi_- Year zero_tags.mp3",
+    "Title": "Year zero",
+    "Artist": "Fumble",
+    "Tags" : [ "Sci-fi"]
+},
+{
+    "SourceFile": "music/Sigmata_- Cornered_tags.mp3",
+    "Title": "Cornered",
+    "Artist": "Fumble",
+    "Tags" : [ "Sigmata"]
+},
+{
+    "SourceFile": "music/Sigmata_- Freedom fists_tags.mp3",
+    "Title": "Freedom fists",
+    "Artist": "Fumble",
+    "Tags" : [ "Sigmata"]
+},
+{
+    "SourceFile": "music/Sigmata_- Infiltration_tags.mp3",
+    "Title": "Infiltration",
+    "Artist": "Fumble",
+    "Tags" : [ "Sigmata"]
+},
+{
+    "SourceFile": "music/Sigmata_- OP_tags.mp3",
+    "Title": "OP",
+    "Artist": "Fumble",
+    "Tags" : [ "Sigmata"]
+},
+{
+    "SourceFile": "music/Sigmata_- Red Alert_tags.mp3",
+    "Title": "Red Alert",
+    "Artist": "Fumble",
+    "Tags" : [ "Sigmata"]
+},
+{
+    "SourceFile": "music/Sigmata_- Weak Signal_tags.mp3",
+    "Title": "Weak Signal",
+    "Artist": "Fumble",
+    "Tags" : [ "Sigmata"]
+},
+{
+    "SourceFile": "music/Sigmata_- Welcome to America_tags.mp3",
+    "Title": "Welcome to America",
+    "Artist": "Fumble",
+    "Tags" : [ "Sigmata"]
+},
+{
+    "SourceFile": "music/Tense_- Aliens_tags.mp3",
+    "Title": "Aliens",
+    "Artist": "Fumble",
+    "Tags" : [ "Tense"]
+},
+{
+    "SourceFile": "music/Tense_- Black Agent_tags.mp3",
+    "Title": "Black Agent",
+    "Artist": "Fumble",
+    "Tags" : [ "Tense"]
+},
+{
+    "SourceFile": "music/Tense_- Creepy forest_tags.mp3",
+    "Title": "Creepy forest",
+    "Artist": "Fumble",
+    "Tags" : [ "Tense"]
+},
+{
+    "SourceFile": "music/Tense_- Dark Horizon_tags.mp3",
+    "Title": "Dark Horizon",
+    "Artist": "Fumble",
+    "Tags" : [ "Tense"]
+},
+{
+    "SourceFile": "music/Tense_- Deep in the Forest_tags.mp3",
+    "Title": "Deep in the Forest",
+    "Artist": "Fumble",
+    "Tags" : [ "Tense"]
+},
+{
+    "SourceFile": "music/Tense_- Fire_tags.mp3",
+    "Title": "Fire",
+    "Artist": "Fumble",
+    "Tags" : [ "Tense"]
+},
+{
+    "SourceFile": "music/Tense_- Hint of hope_tags.mp3",
+    "Title": "Hint of hope",
+    "Artist": "Fumble",
+    "Tags" : [ "Tense"]
+},
+{
+    "SourceFile": "music/Tense_- Run you fools_tags.mp3",
+    "Title": "Run you fools",
+    "Artist": "Fumble",
+    "Tags" : [ "Tense"]
+},
+{
+    "SourceFile": "music/Tense_- Suspect_tags.mp3",
+    "Title": "Suspect",
+    "Artist": "Fumble",
+    "Tags" : [ "Tense"]
+},
+{
+    "SourceFile": "music/Tense_- The Portal_tags.mp3",
+    "Title": "The Portal",
+    "Artist": "Fumble",
+    "Tags" : [ "Tense"]
+},
+{
+    "SourceFile": "music/Tense_- Urban Heroes_tags.mp3",
+    "Title": "Urban Heroes",
+    "Artist": "Fumble",
+    "Tags" : [ "Tense"]
+},
+{
+    "SourceFile": "music/Western_- The bad_tags.mp3",
+    "Title": "The bad",
+    "Artist": "Fumble",
+    "Tags" : [ "Western"]
+},
+{
+    "SourceFile": "music/Western_- The ugly_tags.mp3",
+    "Title": "The ugly",
+    "Artist": "Fumble",
+    "Tags" : [ "Western"]
+},
+{
+    "SourceFile": "music/Western_- Tin Bullet_tags.mp3",
+    "Title": "Tin Bullet",
+    "Artist": "Fumble",
+    "Tags" : [ "Western"]
 }
+]

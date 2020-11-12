@@ -10,6 +10,7 @@ import sys
 import argparse
 import youtube_dl
 import time
+import itertools
 
 #################################
 # parse logging level from cli
@@ -42,7 +43,11 @@ bot = commands.Bot(command_prefix=commands.when_mentioned)
 # read the playlist
 with open("playlist.json") as playlist_file:
     data = playlist_file.read()
-    playlist = json.loads(data)['songs']
+    playlist = json.loads(data)
+
+taglist = list(sorted(set(list(itertools.chain(*[el['Tags'] for el in playlist])))))
+tagdict = {t:list(filter(lambda a: '80s' in a['Tags'], playlist)) for t in  taglist}
+
 logging.info('Loaded playlist with {} songs'.format(len(playlist)))
 
 # [python - Discord.py rewrite and youtube_dl - Stack Overflow](https://stackoverflow.com/questions/60241517/discord-py-rewrite-and-youtube-dl)
@@ -101,15 +106,31 @@ async def on_ready():
 
 @bot.command(name='random', help='get a random song')
 async def randomize(ctx):
-    response = random.choice([f'title:{el["title"]} , author: {el["author"]}' for el in playlist])
+    response = random.choice([f'Artist: {el["Artist"]}, Title:{el["Title"]} , Tags: {",".join(el["Tags"])}' for el in playlist])
     logging.info('random function , response {}'.format(response))
     await ctx.send(response)
 
 @bot.command(name='list', help='list all available songs')
 async def lister(ctx):
-    response = "\n".join([f'title:{el["title"]} , author: {el["author"]}' for el in playlist])
+    response = "\n".join([f'Artist: {el["Artist"]}, Title:{el["Title"]} ,Tags: {",".join(el["Tags"])}' for el in playlist])
     logging.info('lister function , response {}'.format(response))
     await ctx.send(response)
+
+@bot.command(name='tags', help='list all available tags')
+async def lister(ctx):
+    response = '\n'.join([f'{k} : {len(v)} songs' for k,v in tagdict.items()])
+    logging.info('listtag function , response {}'.format(response))
+    await ctx.send(response)
+
+@bot.command(name='tagls', help='list songs in atag')
+async def lister(ctx, *tagname):
+    if tagname is not None and len(tagname) ==1 :
+        response = "\n".join([f'Artist: {el["Artist"]}, Title:{el["Title"]}' for el in tagdict[tagname[0]]])
+        logging.info('listtag function , response {}'.format(response))
+        await ctx.send(response)
+    else:
+        response = f'Hi {ctx.message.author.mention}, you forgot to give a tag!\n Use the command like \n tagls TAG'
+        await ctx.send(response)
 
 @bot.command(name='time', help='print current time')
 async def timer(ctx):
@@ -135,7 +156,7 @@ async def streamyt(ctx, *, urlm ,help='stream an youtube channel, "streamyt URL"
     """Streams from a url (same as yt, but doesn't predownload)"""
     player = await YTDLSource.from_url(url, loop=bot.loop, stream=True)
     ctx.voice_client.play(player, after=lambda e: print('Player error: %s' % e) if e else None)
-    await ctx.send('Now playing: {}'.format(player.title))
+    await ctx.send('Now playing: {}'.format(player.Title))
 
 @bot.command(name="playlocal")
 async def playlocal(ctx):
