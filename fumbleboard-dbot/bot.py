@@ -117,13 +117,13 @@ async def lister(ctx):
     await ctx.send(response)
 
 @bot.command(name='tags', help='list all available tags')
-async def lister(ctx):
+async def tags(ctx):
     response = '\n'.join([f'{k} : {len(v)} songs' for k,v in tagdict.items()])
     logging.info('listtag function , response {}'.format(response))
     await ctx.send(response)
 
 @bot.command(name='tagls', help='list songs in atag')
-async def lister(ctx, *tagname):
+async def tagls(ctx, *tagname):
     if tagname is not None and len(tagname) ==1 :
         response = "\n".join([f'Artist: {el["Artist"]}, Title:{el["Title"]}' for el in tagdict[tagname[0]]])
         logging.info('listtag function , response {}'.format(response))
@@ -159,20 +159,25 @@ async def streamyt(ctx, *, urlm ,help='stream an youtube channel, "streamyt URL"
     await ctx.send('Now playing: {}'.format(player.Title))
 
 @bot.command(name="playlocal")
-async def playlocal(ctx):
+async def playlocal(ctx, *args):
     # Gets voice channel of message author
-    voice_channel = ctx.author.voice.channel
-    channel = None
+    voice_channel = ctx.author.voice
+    # channel = None
+    print(args)
     if voice_channel != None:
-        channel = voice_channel.name
-        vc = await voice_channel.connect()
-        vc.play(discord.FFmpegPCMAudio(source="/home/kidpixo/music/beets/Cowboy Bebop/Cowboy Bebop/00 Bad dog no biscuits.mp3"))
-        # Sleep while audio is playing.
-        while vc.is_playing():
-            time.sleep(.1)
-        await vc.disconnect()
+        channel = voice_channel.channel.name
+        vc = await voice_channel.channel.connect()
+        print(voice_channel)
+        try :
+            vc.play(discord.FFmpegPCMAudio(source="/home/kidpixo/music/beets/Cowboy Bebop/Cowboy Bebop/00 Bad dog no biscuits.mp3"))
+            # Sleep while audio is playing.
+            while vc.is_playing():
+                time.sleep(.1)
+            await vc.disconnect()
+        except discord.errors.Forbidden:
+            log.error('Cannot play audio file.')
     else:
-        await ctx.send(str(ctx.author.name) + "is not in a channel.")
+        await ctx.send(str(ctx.author.name) + " you are note not in a voice channel.")
     # Delete command after the audio is done playing.
     await ctx.message.delete()
 
