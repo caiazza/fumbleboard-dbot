@@ -8,7 +8,7 @@ from datetime import datetime
 import logging
 import sys
 import argparse
-import youtube_dl
+# import youtube_dl
 import time
 import itertools
 
@@ -52,48 +52,49 @@ logging.info('Loaded playlist with {} songs'.format(len(playlist)))
 
 # [python - Discord.py rewrite and youtube_dl - Stack Overflow](https://stackoverflow.com/questions/60241517/discord-py-rewrite-and-youtube-dl)
 # Suppress noise about console usage from errors
-youtube_dl.utils.bug_reports_message = lambda: ''
 
-ytdl_format_options = {
-    'format': 'bestaudio/best',
-    'outtmpl': '%(extractor)s-%(id)s-%(title)s.%(ext)s',
-    'restrictfilenames': True,
-    'noplaylist': False,
-    'nocheckcertificate': True,
-    'ignoreerrors': False,
-    'logtostderr': False,
-    'quiet': True,
-    'no_warnings': True,
-    'default_search': 'auto',
-    'source_address': '0.0.0.0' # bind to ipv4 since ipv6 addresses cause issues sometimes
-}
+# youtube_dl.utils.bug_reports_message = lambda: ''
 
-ffmpeg_options = {
-    'options': '-vn'
-}
+# ytdl_format_options = {
+#     'format': 'bestaudio/best',
+#     'outtmpl': '%(extractor)s-%(id)s-%(title)s.%(ext)s',
+#     'restrictfilenames': True,
+#     'noplaylist': False,
+#     'nocheckcertificate': True,
+#     'ignoreerrors': False,
+#     'logtostderr': False,
+#     'quiet': True,
+#     'no_warnings': True,
+#     'default_search': 'auto',
+#     'source_address': '0.0.0.0' # bind to ipv4 since ipv6 addresses cause issues sometimes
+# }
 
-ytdl = youtube_dl.YoutubeDL(ytdl_format_options)
+# ffmpeg_options = {
+#     'options': '-vn'
+# }
 
-class YTDLSource(discord.PCMVolumeTransformer):
-    def __init__(self, source, *, data, volume=0.5):
-        super().__init__(source, volume)
+# ytdl = youtube_dl.YoutubeDL(ytdl_format_options)
 
-        self.data = data
+# class YTDLSource(discord.PCMVolumeTransformer):
+#     def __init__(self, source, *, data, volume=0.5):
+#         super().__init__(source, volume)
 
-        self.title = data.get('title')
-        self.url = data.get('url')
+#         self.data = data
 
-    @classmethod
-    async def from_url(cls, url, *, loop=None, stream=False):
-        loop = loop or asyncio.get_event_loop()
-        data = await loop.run_in_executor(None, lambda: ytdl.extract_info(url, download=not stream))
+#         self.title = data.get('title')
+#         self.url = data.get('url')
 
-        if 'entries' in data:
-            # take first item from a playlist
-            data = data['entries'][0]
+#     @classmethod
+#     async def from_url(cls, url, *, loop=None, stream=False):
+#         loop = loop or asyncio.get_event_loop()
+#         data = await loop.run_in_executor(None, lambda: ytdl.extract_info(url, download=not stream))
 
-        filename = data['url'] if stream else ytdl.prepare_filename(data)
-        return cls(discord.FFmpegPCMAudio(filename, **ffmpeg_options), data=data)
+#         if 'entries' in data:
+#             # take first item from a playlist
+#             data = data['entries'][0]
+
+#         filename = data['url'] if stream else ytdl.prepare_filename(data)
+#         return cls(discord.FFmpegPCMAudio(filename, **ffmpeg_options), data=data)
 
 #################################
 # bot functions 
@@ -151,12 +152,12 @@ async def leave(ctx):
     logging.info('leaveing voice channel {}')
     await ctx.voice_client.disconnect()
 
-@bot.command()
-async def streamyt(ctx, *, urlm ,help='stream an youtube channel, "streamyt URL"'):
-    """Streams from a url (same as yt, but doesn't predownload)"""
-    player = await YTDLSource.from_url(url, loop=bot.loop, stream=True)
-    ctx.voice_client.play(player, after=lambda e: print('Player error: %s' % e) if e else None)
-    await ctx.send('Now playing: {}'.format(player.Title))
+# @bot.command()
+# async def streamyt(ctx, *, urlm ,help='stream an youtube channel, "streamyt URL"'):
+#     """Streams from a url (same as yt, but doesn't predownload)"""
+#     player = await YTDLSource.from_url(url, loop=bot.loop, stream=True)
+#     ctx.voice_client.play(player, after=lambda e: print('Player error: %s' % e) if e else None)
+#     await ctx.send('Now playing: {}'.format(player.Title))
 
 @bot.command(name="playlocal")
 async def playlocal(ctx, *args):
