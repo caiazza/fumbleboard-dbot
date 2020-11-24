@@ -3,9 +3,7 @@ import logging
 import sys
 from dotenv import load_dotenv
 import os
-
-from discord.ext import commands
-import discord
+from fumbleboard_dbot.bot import bot
 
 #################################
 # parse logging level from cli
@@ -30,12 +28,6 @@ logging.info('Setting LOGLEVEL={} ({})'.format(loglevel,numeric_level))
 # load config
 load_dotenv()
 bot_token = os.getenv('DISCORD_BOT_TOKEN')
-
-
-#################################
-# instantiate the bot
-bot = commands.Bot(command_prefix=commands.when_mentioned)
-
 
 
 ########################################

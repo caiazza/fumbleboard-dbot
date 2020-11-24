@@ -73,12 +73,6 @@ logging.info('Loaded playlist with {} songs'.format(len(playlist)))
 #################################
 # bot functions 
 
-@bot.event
-async def on_ready():
-    print(f'We have logged in as {bot.user} at {datetime.now()}')
-    logging.info(f'We have logged in as {bot.user} at {datetime.now()}')
-    logging.debug(bot)
-
 @bot.command(name='random', help='get a random song')
 async def randomize(ctx):
     response = random.choice([f'Artist: {el["Artist"]}, Title:{el["Title"]} , Tags: {",".join(el["Tags"])}' for el in playlist])
