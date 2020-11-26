@@ -1,11 +1,9 @@
 from discord.ext import commands
 import discord
-import json
 import random
 from datetime import datetime
 # import youtube_dl
 import time
-import itertools
 
 
 
@@ -14,15 +12,7 @@ import itertools
 # bot = commands.Bot(command_prefix=commands.when_mentioned)
 
 #################################
-# read the playlist
-with open("playlist.json") as playlist_file:
-    data = playlist_file.read()
-    playlist = json.loads(data)
 
-taglist = list(sorted(set(list(itertools.chain(*[el['Tags'] for el in playlist])))))
-tagdict = {t:list(filter(lambda a: '80s' in a['Tags'], playlist)) for t in  taglist}
-
-logging.info('Loaded playlist with {} songs'.format(len(playlist)))
 
 # [python - Discord.py rewrite and youtube_dl - Stack Overflow](https://stackoverflow.com/questions/60241517/discord-py-rewrite-and-youtube-dl)
 # Suppress noise about console usage from errors
