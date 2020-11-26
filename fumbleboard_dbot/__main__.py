@@ -3,7 +3,7 @@ import logging
 import sys
 from dotenv import load_dotenv
 import os
-from fumbleboard_dbot.bot import bot
+from fumbleboard_dbot.bot import FumbleBoardBot
 from fumbleboard_dbot.tracklist import Tracklist
 
 import json
@@ -43,5 +43,6 @@ bot_token = os.getenv('DISCORD_BOT_TOKEN')
 
 ########################################
 # configure and run the bot
-bot.load_tracklist("fumbleboard_dbot/playlist.json")
-bot.run(bot_token)
+fbbot = FumbleBoardBot()
+fbbot.load_tracklist("fumbleboard_dbot/playlist.json")
+fbbot.run(bot_token)
