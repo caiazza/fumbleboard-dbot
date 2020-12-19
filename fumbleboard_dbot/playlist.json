@@ -1,11 +1,6 @@
 [{
+    "SourceURL": "https://fumblegdr.it/wp-content/plugins/Fumble-utilities/Soundboard/80s%20-%20Berlin%201981.mp3",
     "SourceFile": "music/80s_- Berlin 1981_tags.mp3",
-    "Title": "Berlin 1981",
-    "Artist": "Fumble",
-    "Tags" : [ "80s"]
-},
-{
-    "SourceFile": "music/80s_- Berlin 1981tags.mp3",
     "Title": "Berlin 1981",
     "Artist": "Fumble",
     "Tags" : [ "80s"]
