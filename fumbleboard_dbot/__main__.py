@@ -4,9 +4,8 @@ import sys
 from dotenv import load_dotenv
 import os
 from fumbleboard_dbot.bot import FumbleBoardBot
-from fumbleboard_dbot.tracklist import Tracklist
+#from fumbleboard_dbot.tracklist import Tracklist
 
-import json
 import itertools
 
 #################################
@@ -43,6 +42,8 @@ bot_token = os.getenv('DISCORD_BOT_TOKEN')
 
 ########################################
 # configure and run the bot
-fbbot = FumbleBoardBot()
+url = "file:///" + os.getcwd() + "/fumbleboard_dbot/config.json"
+logging.info("current working directory: {}".format(url))
+fbbot = FumbleBoardBot(conf_url = "file:///" + os.getcwd() + "/fumbleboard_dbot/config.json")
 fbbot.load_tracklist("fumbleboard_dbot/playlist.json")
 fbbot.run(bot_token)
