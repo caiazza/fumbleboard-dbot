@@ -10,8 +10,9 @@ class Track:
         self.Artist = Artist
         self.Tags = Tags
     
-    def FillFromDict(self, Data):
-        # self.SourceURL = Data["SourceURL"]
+    @classmethod    
+    def fromdict(self, Data):
+        self.SourceURL = Data["SourceURL"]
         # self.SourceFile = Data["SourceFile"]
         self.Title = Data["Title"]
         self.Artist = Data["Artist"]
@@ -19,7 +20,6 @@ class Track:
 
     def asdict(self):
         return {"SourceURL":self.SourceURL, "Title":self.Title, "Artist":self.Artist, "Tags":self.Tags}
-
     
     def __repr__(self):
         return f"Track(SourceURL={self.SourceURL}, Title={self.Title}, Artist={self.Artist}, Tags={self.Tags})"
@@ -28,12 +28,8 @@ class Track:
 class Tracklist:
     """The list of track loaded by the bot"""
     
-    def __init__(self, InList):
-        self.Tracks = []
-        for Element in InList:
-            TrackInfo = Track()
-            TrackInfo.FillFromDict(Element)
-            self.Tracks.append(TrackInfo)
+    def __init__(self, InList = []):
+        self.Tracks = InList
         logging.info('Loaded {} tracks in the tracklist'.format(len(self)))
         
     def __len__(self):

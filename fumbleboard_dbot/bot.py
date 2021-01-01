@@ -2,8 +2,9 @@ import discord
 from discord.ext import commands
 import logging
 from datetime import datetime
-import fumbleboard_dbot.tracklist
-# from fumbleboard_dbot.tracklist import Tracklist
+# import fumbleboard_dbot.tracklist
+from fumbleboard_dbot.tracklist import Tracklist
+from fumbleboard_dbot.tracklist import Track
 import json
 import urllib
 
@@ -17,7 +18,9 @@ class FumbleBoardBot(commands.Bot):
     def __init__(self, *args, conf_url, **kwargs):
         super().__init__(command_prefix=commands.when_mentioned,*args, **kwargs)
         data = urllib.request.urlopen(url = conf_url)
-        self.Tracklist = []
+        config_dict = json.loads("".join(line.decode("utf-8") for line in data))
+        self.load_tracklist(config_dict["tracklist"])
+        
         self.command(name='list', help='list all available tracks')(self.list_response)
         self.command(name='play', help='starts reproducing a playlist in the vocal channel')(self.play_single_track)
 
@@ -27,8 +30,8 @@ class FumbleBoardBot(commands.Bot):
         
     def load_tracklist(self, path):
         with open(path) as tracklist_file:
-            data = tracklist_file.read()
-            self.Tracklist = fumbleboard_dbot.tracklist.Tracklist(json.loads(data))
+            data = json.loads(tracklist_file.read())
+            self.Tracklist = Tracklist([ Track.fromdict(Element) for Element in data])
    
     # @commands.Bot.command(name='list', help='list all available tracks')
     # @self.command(name='list', help='list all available tracks')
@@ -37,7 +40,7 @@ class FumbleBoardBot(commands.Bot):
         logging.info('list function , response {}'.format(response))
         await ctx.send(response)
         
-    async def play_single_track(self, ctx, Track: fumbleboard_dbot.tracklist.Track):
+    async def play_single_track(self, ctx, Track: Track):
         await ctx.send(Track)
     
             

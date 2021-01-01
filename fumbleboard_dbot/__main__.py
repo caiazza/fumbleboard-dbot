@@ -25,7 +25,7 @@ if not isinstance(numeric_level, int):
 # instantiate logger to stdout
 FORMAT = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 logging.basicConfig(level=numeric_level, format=FORMAT,stream=sys.stdout)
-logging.info('Setting LOGLEVEL={} ({})'.format(loglevel,numeric_level))
+logging.info(f'Setting LOGLEVEL={loglevel} ({numeric_level})')
 
 #################################
 # load config
@@ -38,12 +38,7 @@ bot_token = os.getenv('DISCORD_BOT_TOKEN')
 
 
 
-
-
 ########################################
 # configure and run the bot
-url = "file:///" + os.getcwd() + "/fumbleboard_dbot/config.json"
-logging.info("current working directory: {}".format(url))
-fbbot = FumbleBoardBot(conf_url = "file:///" + os.getcwd() + "/fumbleboard_dbot/config.json")
-fbbot.load_tracklist("fumbleboard_dbot/playlist.json")
+fbbot = FumbleBoardBot(conf_url = ("file:///" + os.getcwd() + "/config.json"))
 fbbot.run(bot_token)
